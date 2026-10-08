@@ -1,0 +1,19 @@
+# --- Local LLM -------------------------------------------------------------
+ollama>=0.3.0
+
+# --- Knowledge stores ------------------------------------------------------
+neo4j>=5.14
+chromadb>=0.5.0
+
+# --- Embeddings (local, CPU-friendly) --------------------------------------
+sentence-transformers>=2.6.0
+
+# --- Graph algorithms ------------------------------------------------------
+networkx>=3.2
+
+# --- Ingestion / extraction helpers ----------------------------------------
+requests>=2.31
+pydantic>=2.6
+rapidfuzz>=3.6
+python-dotenv>=1.0
+tqdm>=4.66

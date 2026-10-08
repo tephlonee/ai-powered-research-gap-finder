@@ -1,0 +1,22 @@
+# --- Secrets & local config ---
+.env
+
+# --- Data / caches / stores (rebuildable; don't commit) ---
+data/
+*.sqlite
+chroma/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.pytest_cache/
+
+# --- OS / editor ---
+.DS_Store
+.idea/
+.vscode/
+*.swp

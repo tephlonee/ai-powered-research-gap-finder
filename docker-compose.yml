@@ -1,0 +1,19 @@
+# Single service: Neo4j. Everything else runs in-process (Chroma, embeddings) or
+# natively on your machine (Ollama). This keeps GPU memory for the model.
+services:
+  neo4j:
+    image: neo4j:5-community
+    container_name: gapfinder-neo4j
+    ports:
+      - "7474:7474"   # Browser UI  -> http://localhost:7474
+      - "7687:7687"   # Bolt driver -> bolt://localhost:7687
+    environment:
+      # Must match NEO4J_USER / NEO4J_PASSWORD in your .env (default user is 'neo4j').
+      NEO4J_AUTH: "neo4j/gapfinder"
+      NEO4J_server_memory_heap_max__size: "1G"
+      NEO4J_server_memory_pagecache_size: "512M"
+    volumes:
+      - neo4j_data:/data
+
+volumes:
+  neo4j_data:
